@@ -137,7 +137,7 @@ class AddMovieFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
         )
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        val date = "$dayOfMonth/$month/$year"
+        val date = "$dayOfMonth/${month + 1}/$year"
         binding.etDate.setText(
             date.convertFromDateFormatToAnother(
                 currentFormat = Constants.CALENDER_DATE_FORMAT,
