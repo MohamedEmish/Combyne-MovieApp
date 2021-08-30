@@ -15,7 +15,7 @@ android {
         targetSdk 30
         versionCode 1
         versionName "1.0"
-
+        flavorDimensions "default"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -23,6 +23,21 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable true
+            shrinkResources false
+            minifyEnabled false
+        }
+    }
+
+    productFlavors {
+        dev {
+            buildConfigField 'String', 'HOST', '"https://tv-show-manager.combyne.com/graphql/"'
+        }
+        prod {
+            buildConfigField 'String', 'HOST', '"https://tv-show-manager.combyne.com/graphql/"'
         }
     }
     compileOptions {
@@ -93,4 +108,7 @@ dependencies {
 // Allow references to generated code
 kapt {
     correctErrorTypes true
+}
+apollo {
+    generateKotlinModels.set(true)
 }

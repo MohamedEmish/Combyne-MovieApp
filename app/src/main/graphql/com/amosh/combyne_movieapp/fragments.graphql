@@ -1,0 +1,59 @@
+# Movie fragments
+fragment MovieObject on Movie {
+    id
+    objectId
+    createdAt
+    updatedAt
+    ACL {
+        users {
+            userId
+            read
+            write
+        }
+        roles {
+            roleName
+            read
+            write
+        }
+        public {
+            read
+            write
+        }
+    }
+    title
+    releaseDate
+    seasons
+}
+
+fragment PageInfo on PageInfo {
+    startCursor
+    endCursor
+    hasNextPage
+    hasPreviousPage
+}
+
+# Queries
+query GetMovies($first: Int!, $skip: Int!) {
+    movies(first: $first, skip: $skip) {
+        count
+        edges {
+            cursor
+            node {
+                ...MovieObject
+            }
+        }
+        pageInfo {
+            ...PageInfo
+        }
+    }
+}
+
+#Mutations
+mutation createMovie($input: CreateMovieInput!) {
+    createMovie(input: $input) {
+        clientMutationId
+        movie {
+            ...MovieObject
+        }
+    }
+}
