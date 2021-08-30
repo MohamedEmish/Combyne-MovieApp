@@ -4,13 +4,14 @@ plugins {
     id("com.apollographql.apollo").version("2.5.4")
     id 'kotlin-kapt'
     id("dagger.hilt.android.plugin")
+    id 'androidx.navigation.safeargs'
 }
 
 android {
     compileSdk 30
 
     defaultConfig {
-        applicationId "com.amosh.combyne_movieapp"
+        applicationId "com.amosh.combynemovieapp"
         minSdk 24
         targetSdk 30
         versionCode 1
@@ -103,6 +104,11 @@ dependencies {
     // Hilt for dependency injection
     implementation "com.google.dagger:hilt-android:2.38.1"
     kapt "com.google.dagger:hilt-android-compiler:2.38.1"
+
+    // Navigation Components
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+
 }
 
 // Allow references to generated code

@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Combyne-MovieApp</string>
+    <string name="app_name">TV Show Manager</string>
+    <string name="tv_show">Tv show</string>
+
+    <string name="back_btn_message">Please click BACK again to exit</string>
+    <string name="view_shows_list">View TV Shows List</string>
+    <string name="add_tv_show">Add New TV Show</string>
+    <string name="lbl_release_date">Release Date:</string>
+    <string name="lbl_seasons">Seasons:</string>
+    <string name="release_date">Release Date</string>
+    <string name="seasons">Seasons</string>
+    <string name="save">Save</string>
 </resources>
