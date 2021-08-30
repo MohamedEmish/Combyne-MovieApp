@@ -1,25 +1,6 @@
 # Movie fragments
 fragment MovieObject on Movie {
     id
-    objectId
-    createdAt
-    updatedAt
-    ACL {
-        users {
-            userId
-            read
-            write
-        }
-        roles {
-            roleName
-            read
-            write
-        }
-        public {
-            read
-            write
-        }
-    }
     title
     releaseDate
     seasons
