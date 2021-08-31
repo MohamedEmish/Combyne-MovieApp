@@ -19,6 +19,4 @@ Those libraries are used extinsively in the app
   - Kotlin coroutines
   - Unit testing
  
-## Future features!
-  - Add FCM
 # Combyne-Movie App
