@@ -122,11 +122,11 @@ class AddMovieFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
         with(binding) {
             val title = etShowTitle.text?.toString()?.trim() ?: ""
             val date = etDate.text?.toString()?.trim() ?: ""
-            val seasons = etSeasons.text?.toString()?.trim()?.toInt() ?: 0
+            val seasons = etSeasons.text?.toString()?.trim()
             return AddMovieUtil.validateNewMovieInput(
                 title = title,
                 date = date,
-                seasons = seasons
+                seasons = if (seasons.isNullOrEmpty()) 0 else seasons.toInt()
             )
         }
     }
