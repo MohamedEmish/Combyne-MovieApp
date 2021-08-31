@@ -12,9 +12,9 @@ Follow those guidlines
 App is built with Korlin and MVI architecture
 Those libraries are used extinsively in the app
   - Apollo - Graphql
-  - Dependancy injectio by Hilt
+  - Dependancy injection by Hilt
   - AndroidX libs
-  - Room
+  - Room DB
   - Flashbar
   - Kotlin coroutines
   - Unit testing
