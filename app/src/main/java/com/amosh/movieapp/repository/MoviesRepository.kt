@@ -6,8 +6,8 @@ import com.amosh.combyne_movieapp.fragment.MovieObject
 import com.amosh.combyne_movieapp.type.CreateMovieInput
 import com.amosh.combyne_movieapp.type.MovieOrder
 import com.amosh.movieapp.models.AppResponseState
-import com.amosh.movieapp.room.MovieCacheMapper
-import com.amosh.movieapp.room.MoviesDao
+import com.amosh.movieapp.roomDb.MovieCacheMapper
+import com.amosh.movieapp.roomDb.MoviesDao
 import com.amosh.movieapp.utils.Constants.PAGE_SIZE
 import com.amosh.movieapp.utils.addIfNotExistAndNotNull
 import com.apollographql.apollo.ApolloClient

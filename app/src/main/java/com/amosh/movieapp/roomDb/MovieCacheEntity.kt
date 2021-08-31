@@ -1,4 +1,4 @@
-package com.amosh.movieapp.room
+package com.amosh.movieapp.roomDb
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

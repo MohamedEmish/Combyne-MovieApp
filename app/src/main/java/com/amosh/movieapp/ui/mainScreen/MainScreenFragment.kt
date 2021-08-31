@@ -1,4 +1,4 @@
-package com.amosh.movieapp.ui
+package com.amosh.movieapp.ui.mainScreen
 
 import android.os.Bundle
 import android.view.LayoutInflater

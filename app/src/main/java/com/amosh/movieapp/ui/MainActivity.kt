@@ -13,8 +13,10 @@ import com.amosh.movieapp.R
 import com.amosh.movieapp.databinding.ActivityMainBinding
 import com.amosh.movieapp.models.AppMessage
 import com.amosh.movieapp.models.AppMessage.Companion.INFO
+import com.amosh.movieapp.ui.mainScreen.MainScreenFragment
 import com.amosh.movieapp.utils.makeGone
 import com.amosh.movieapp.utils.makeVisible
+import com.amosh.movieapp.utils.setIsVisible
 import com.andrognito.flashbar.Flashbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,7 +61,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         destination: NavDestination,
         arguments: Bundle?
     ) {
-        if (destination.id == R.id.mainScreenFragment) binding.toolbarBack.makeGone() else binding.toolbarBack.makeVisible()
+        binding.toolbarBack.setIsVisible(destination.id != R.id.mainScreenFragment)
     }
 
     private fun doubleToExit() {
@@ -93,5 +95,4 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
             .build()
             .show()
     }
-
 }

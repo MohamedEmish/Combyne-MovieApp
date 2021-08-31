@@ -1,4 +1,4 @@
-package com.amosh.movieapp.room
+package com.amosh.movieapp.roomDb
 
 import com.amosh.combyne_movieapp.fragment.MovieObject
 import com.amosh.movieapp.models.mappers.EntityMapper

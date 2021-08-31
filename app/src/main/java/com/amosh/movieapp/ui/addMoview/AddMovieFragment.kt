@@ -15,7 +15,6 @@ import com.amosh.movieapp.ui.MoviesViewModel
 import com.amosh.movieapp.utils.*
 import com.apollographql.apollo.api.Input
 import dagger.hilt.android.AndroidEntryPoint
-import java.text.SimpleDateFormat
 import java.util.*
 
 @AndroidEntryPoint
@@ -25,6 +24,22 @@ class AddMovieFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
     private val binding get() = _binding!!
 
     private val viewModel: MoviesViewModel by viewModels()
+
+    private val cal: Calendar by lazy {
+        Calendar.getInstance()
+    }
+
+    private val datePickerDialog by lazy {
+        DatePickerDialog(
+            requireContext(),
+            this,
+            cal.get(Calendar.YEAR),
+            cal.get(Calendar.MONTH),
+            cal.get(Calendar.DAY_OF_MONTH)
+        ).apply {
+            datePicker.maxDate = cal.timeInMillis
+        }
+    }
 
     override fun getLayoutRoot(inflater: LayoutInflater): View {
         _binding = FragmentAddMovieBinding.inflate(layoutInflater)
@@ -105,30 +120,18 @@ class AddMovieFragment : BaseFragment(), DatePickerDialog.OnDateSetListener {
 
     private fun isDataValid(): Boolean {
         with(binding) {
-            val title = etShowTitle.text?.toString()?.trim()
-            val date = etDate.text?.toString()?.trim()
-            val seasons = etSeasons.text?.toString()?.trim()
-
-            if (title.isNullOrEmpty() || date.isNullOrEmpty() || seasons.isNullOrEmpty())
-                return false
+            val title = etShowTitle.text?.toString()?.trim() ?: ""
+            val date = etDate.text?.toString()?.trim() ?: ""
+            val seasons = etSeasons.text?.toString()?.trim()?.toInt() ?: 0
+            return AddMovieUtil.validateNewMovieInput(
+                title = title,
+                date = date,
+                seasons = seasons
+            )
         }
-        return true
     }
 
-    private fun showDatePicker() {
-        val cal = Calendar.getInstance()
-
-        val datePickerDialog = DatePickerDialog(
-            requireContext(),
-            this,
-            cal.get(Calendar.YEAR),
-            cal.get(Calendar.MONTH),
-            cal.get(Calendar.DAY_OF_MONTH)
-        )
-
-        datePickerDialog.datePicker.maxDate = cal.timeInMillis
-        datePickerDialog.show()
-    }
+    private fun showDatePicker() = datePickerDialog.show()
 
     private fun getDate(): String =
         (binding.etDate.text?.toString()?.trim() ?: "").convertFromDateFormatToAnother(

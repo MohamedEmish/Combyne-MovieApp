@@ -1,4 +1,4 @@
-package com.amosh.movieapp.room
+package com.amosh.movieapp.roomDb
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

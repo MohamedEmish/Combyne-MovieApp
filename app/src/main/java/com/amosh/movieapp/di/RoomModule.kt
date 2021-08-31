@@ -2,8 +2,8 @@ package com.amosh.movieapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.amosh.movieapp.room.MoviesDao
-import com.amosh.movieapp.room.MoviesDatabase
+import com.amosh.movieapp.roomDb.MoviesDao
+import com.amosh.movieapp.roomDb.MoviesDatabase
 import com.amosh.movieapp.utils.Constants.DATABASE_NAME
 import dagger.Module
 import dagger.Provides

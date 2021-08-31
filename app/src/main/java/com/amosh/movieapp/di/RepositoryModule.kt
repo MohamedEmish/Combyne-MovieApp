@@ -1,8 +1,8 @@
 package com.amosh.movieapp.di
 
 import com.amosh.movieapp.repository.MoviesRepository
-import com.amosh.movieapp.room.MovieCacheMapper
-import com.amosh.movieapp.room.MoviesDao
+import com.amosh.movieapp.roomDb.MovieCacheMapper
+import com.amosh.movieapp.roomDb.MoviesDao
 import com.apollographql.apollo.ApolloClient
 import dagger.Module
 import dagger.Provides
