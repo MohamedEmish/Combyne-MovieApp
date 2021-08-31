@@ -11,7 +11,7 @@ Follow those guidlines
 ## Tech stack
 App is built with Korlin and MVI architecture
 Those libraries are used extinsively in the app
-  - Apollo
+  - Apollo - Graphql
   - Dependancy injectio by Hilt
   - AndroidX libs
   - Room
